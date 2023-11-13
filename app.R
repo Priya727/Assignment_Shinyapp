@@ -4,21 +4,19 @@
 #'
 #' @title Shiny UI for the Application
 #' @description This UI includes a text input box for entering the location, a search button, and a map display area.
-#' @export
-#' @import shiny
-#' @import dplyr
-#' @import httr
-#' @import jsonlite
-#' @name ui
 
 
-# User interface for the application that generates a map
-ui <-fluidPage(
-  
-  # shinyApp Title
+library(shiny)
+library(leaflet)
+library(jsonlite)
+library(rvest)
+
+library(lab5Package)
+
+
+
+ui<-fluidPage(
   titlePanel("Looking for a place?"),
-  
-  # Sidebar 
   sidebarLayout(
     sidebarPanel(
       h3(textInput(inputId = "begin",label = "Enter here")),
